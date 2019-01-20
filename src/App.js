@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './common/header/index';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store/index';
-import {BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/home';
 import Detail from './pages/detail';
@@ -12,16 +12,15 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <Header />
-          <BrowserRouter>
-            <div>
-              <Route exact path="/" component={Home}/>
-              <Route path="/detail" component={Detail}/>
-            </div>
-
-          </BrowserRouter>
-        </div>
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/detail" component={Detail} />
+            </Switch>
+          </div>
+        </BrowserRouter>
       </Provider>
     );
   }
