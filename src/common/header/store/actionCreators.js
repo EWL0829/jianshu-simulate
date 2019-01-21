@@ -1,6 +1,5 @@
 import * as constants from './constants';
 import axios from 'axios';
-import { fromJS } from 'immutable';
 
 export const searchFocus = () => ({
   type: constants.SEARCH_FOCUS
