@@ -44,7 +44,6 @@ class Header extends Component {
       }
     }
 
-
     if (focused || mouseIn) {
       return (
         <SearchInfo
@@ -78,6 +77,7 @@ class Header extends Component {
 
   render() {
     const { focused, handleSearchFocus, handleSearchBlur, list } = this.props;
+
     return (
       <HeaderWrapper>
         <Link to='/'>
@@ -128,11 +128,11 @@ class Header extends Component {
 
 }
 
-const mapStatetoProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     focused: state.getIn(['header', 'focused']),
     list: state.getIn(['header', 'list']),
-    page: state.getIn(['header', 'pag'], 'notfound'),
+    page: state.getIn(['header', 'page'], 'notfound'),
     mouseIn: state.getIn(['header', 'mouseIn']),
     totalPage: state.getIn(['header', 'totalPage']),
   };
@@ -141,10 +141,7 @@ const mapStatetoProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleSearchFocus(list) {
-      const newList = list.toJS();
-      if (newList.length <= 0) {
-        dispatch(actionCreators.getList());
-      }
+      (list.size === 0) && dispatch(actionCreators.getList());
       dispatch(actionCreators.searchFocus());
     },
     handleSearchBlur() {
@@ -173,7 +170,7 @@ const mapDispatchToProps = (dispatch) => {
     }
   };
 };
-export default connect(mapStatetoProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
 
 
 

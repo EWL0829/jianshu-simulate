@@ -13,7 +13,6 @@ const defaultState = fromJS({
 
 // reducer传出的一定是一个纯函数，由固定的输入一定会有固定的输出，且不会修改输入的内容
 export default (state = defaultState, action) => {
-
     switch(action.type) {
         case constants.SEARCH_FOCUS:
             return state.set('focused', true);
@@ -21,8 +20,8 @@ export default (state = defaultState, action) => {
             return state.set('focused', false);
         case constants.CHANGE_LIST:
             return state.merge({
-                'list': action.data,
-                'totalPage': action.totalPage
+                list: action.data,
+                totalPage: action.totalPage
             });
         case constants.MOUSE_ENTER:
             return state.set('mouseIn', true);
@@ -33,5 +32,4 @@ export default (state = defaultState, action) => {
         default: 
             return state;
     }
-
 };
