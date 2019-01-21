@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { actionCreators } from './store';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import {
   HeaderWrapper,
   Logo,
@@ -75,6 +75,11 @@ class Header extends Component {
     }
   };
 
+  linkTo = (link) => {
+    const { history } = this.props;
+    history.push(link);
+  };
+
   render() {
     const { focused, handleSearchFocus, handleSearchBlur, list } = this.props;
 
@@ -90,7 +95,7 @@ class Header extends Component {
           </NavItem>
           <NavItem className='left download-APP'>
             <Icon className='iconfont'>&#xe666;</Icon>
-            下载APP
+            下载App
           </NavItem>
           <NavItem className='left search-box'>
             <CSSTransition
@@ -110,7 +115,7 @@ class Header extends Component {
               this.getListArea(focused)
             }
           </NavItem>
-          <NavItem className='right log-in'>登录</NavItem>
+          <NavItem className='right log-in' onClick={() => this.linkTo('/sign_in')}>登录</NavItem>
           <NavItem className='right font-change'>
             <Icon className='iconfont' style={{ fontSize: '20px', color: '#969696' }}>&#xe602;</Icon>
           </NavItem>
@@ -120,7 +125,7 @@ class Header extends Component {
             <Icon className='iconfont'>&#xe601;</Icon>
             写文章
           </Button>
-          <Button className='sign-up'>注册</Button>
+          <Button className='sign-up' onClick={() => this.linkTo('/sign_up')}>注册</Button>
         </Addition>
       </HeaderWrapper>
     )
@@ -170,7 +175,7 @@ const mapDispatchToProps = (dispatch) => {
     }
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));
 
 
 

@@ -189,6 +189,8 @@ export const Button = styled.button`
     border: 1px solid #ec6149;
     color: #ea6f5a;
     cursor: pointer;
+    outline: none;
+    
     &.sign-up:hover {
         background: rgba(236,97,73,.05);
     }
