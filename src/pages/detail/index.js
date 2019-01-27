@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { DetailWrapper, DetailHeader, Author, Content } from './style';
 import Header from '../../common/header/index';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { actionCreators } from './store';
 
 class Detail extends Component {
@@ -44,4 +45,4 @@ const mapDispatchToProps = (dispatch) => ({
     },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Detail));
