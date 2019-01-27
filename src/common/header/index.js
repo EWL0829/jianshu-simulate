@@ -126,10 +126,12 @@ class Header extends Component {
                     </NavItem>
                 </Nav>
                 <Addition>
-                    <Button className='write-btn'>
-                        <Icon className='iconfont'>&#xe601;</Icon>
-                        写文章
-                    </Button>
+                    <Link to='/write'>
+                        <Button className='write-btn'>
+                            <Icon className='iconfont'>&#xe601;</Icon>
+                            写文章
+                        </Button>
+                    </Link>
                     <Button className='sign-up' onClick={() => this.linkTo('/sign_up')}>注册</Button>
                 </Addition>
             </HeaderWrapper>
