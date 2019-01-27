@@ -7,7 +7,7 @@ export const DetailWrapper = styled.div`
   overflow: hidden;//触发bfc，清除浮动
 `;
 
-export const Header = styled.div`
+export const DetailHeader = styled.div`
   margin: 50px 0 20px 0;
   font-size: 34px;
   line-height: 44px;
@@ -27,5 +27,17 @@ export const Content = styled.div`
   
   img {
     width: 100%;
+  }
+  
+  p {
+    margin: 25px 0;
+    color: #2f2f2f;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    
+    b {
+      font-weight: bold;
+    }
   }
 `;

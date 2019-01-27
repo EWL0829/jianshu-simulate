@@ -21,6 +21,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -30,6 +31,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+}
+a {
+  text-decoration: none;
 }
 ol, ul {
   list-style: none;
