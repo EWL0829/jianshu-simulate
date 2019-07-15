@@ -8,6 +8,7 @@ import Recommend from './components/Recommend';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import Header from '../../common/header/index';
+import Slider from '../../common/slider/index';
 
 class Home extends PureComponent {
     // 回到顶部
@@ -45,9 +46,10 @@ class Home extends PureComponent {
                 <Header/>
                 <HomeWrapper>
                     <HomeLeft>
-                        <img className='banner-img'
-                             src="https://upload.jianshu.io/admin_banners/web_images/4528/cfbfae092b2d7f29a4bc52e906dfd89a5e8ac16d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
-                             alt="图片加载失败"/>
+                        {/*<img className='banner-img'*/}
+                        {/*src="https://upload.jianshu.io/admin_banners/web_images/4528/cfbfae092b2d7f29a4bc52e906dfd89a5e8ac16d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"*/}
+                        {/*alt="图片加载失败"/>*/}
+                        <Slider/>
                         <Topic/>
                         <List/>
                     </HomeLeft>

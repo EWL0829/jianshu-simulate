@@ -14,7 +14,7 @@ class Sign extends PureComponent {
             return <Redirect to='/sign_in' />
         }
         return (
-            <div>write</div>
+            <div>我是待开发的写文章页面</div>
         )
     }
 }

@@ -3,7 +3,7 @@ import { actionCreators } from './store';
 import { actionCreators as LogInActionCreators } from '../../pages/signIn/store';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, NavLink } from 'react-router-dom';
 import {
     HeaderWrapper,
     Logo,
@@ -83,17 +83,19 @@ class Header extends Component {
 
     render () {
         const { focused, handleSearchFocus, handleSearchBlur, list, login, logOut } = this.props;
-        console.log('signIn', login);
+
         return (
             <HeaderWrapper>
                 <Link to='/'>
                     <Logo/>
                 </Link>
                 <Nav>
-                    <NavItem className='left active'>
-                        <Icon className='iconfont'>&#xe604;</Icon>
-                        首页
-                    </NavItem>
+                    <NavLink to='/'>
+                        <NavItem className='left active'>
+                            <Icon className='iconfont'>&#xe604;</Icon>
+                            首页
+                        </NavItem>
+                    </NavLink>
                     <NavItem className='left download-APP'>
                         <Icon className='iconfont'>&#xe666;</Icon>
                         下载App

@@ -16,7 +16,7 @@ export const HomeLeft = styled.div`
     width: 625px;
     height: 270px;
     margin-bottom: 35px;
-
+    border-radius: 4px;
   }
 `;
 

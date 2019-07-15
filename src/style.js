@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  background: #fff;
 }
 a {
   text-decoration: none;
@@ -49,5 +50,27 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: #fff;
+  user-select: none;
+}
+
+.rounded-button {
+  padding: 0 12px;
+  background: #fff;
+  color: #9b9b9b;
+  border-radius: 50px;
+  font-size: 14px;
+  line-height: 30px;
+  border: 1px solid #dcdcdc;
+  cursor: pointer;
+  
+  &:hover {
+    background: rgba(230, 230, 230, .3);
+  }
 }
 `

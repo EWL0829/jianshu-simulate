@@ -62,6 +62,16 @@ class App extends Component {
                                     },
                                 })
                             }/>
+                            <Route path="/option" component={
+                                Loadable({
+                                    loader: () => {
+                                        return import('./pages/fitter');
+                                    },
+                                    loading () {
+                                        return <div>正在加载……</div>
+                                    },
+                                })
+                            }/>
                         </Switch>
                     </Fragment>
                 </BrowserRouter>

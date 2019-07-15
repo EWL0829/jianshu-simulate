@@ -7,6 +7,12 @@ const getDetailInfo = (result) => ({
     title: result.title,
     author: result.author,
     content: result.content,
+    avatar: result.avatar,
+    date: result.date,
+    wordNumber: result.wordNumber,
+    readNumber: result.readNumber,
+    commentNumber: result.commentNumber,
+    likedNumber: result.likedNumber,
 });
 
 export const getDetail = (id) => {

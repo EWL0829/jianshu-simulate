@@ -67,21 +67,33 @@ export const InputBox = styled.div`
   height: 50px;
   line-height: 50px;
   border: 1px solid #c8c8c8;
+  border-top: none;
   
   i {
     position: absolute;
     display: block;
     left: 0;
     width: 20%;
-    font-size: 16px;
+    font-size: 20px;
+    color: #aaa;
   }
   
-  &.account {
+  //&.account {
+  //  border-radius: 4px 4px 0 0;
+  //  border-bottom: none;
+  //}
+  
+  //&.password {
+  //  border-radius: 0 0 4px 4px;
+  //}
+  
+  &:first-of-type {
+    border-top: 1px solid #c8c8c8;
     border-radius: 4px 4px 0 0;
-    border-bottom: none;
   }
   
-  &.password {
+  &:last-of-type {
+    border-top: none;
     border-radius: 0 0 4px 4px;
   }
 `;
@@ -105,7 +117,6 @@ export const Button = styled.button`
   border-radius: 25px;
   border: none;
   outline: none;
-  background: #3194d0;
   color: #fff;
   font-size: 18px;
   padding: 9px 18px;
@@ -114,7 +125,18 @@ export const Button = styled.button`
   display: block;
   box-sizing: border-box;
   
-  &:hover {
-    background: #187cb7;
+  &.sign-in-btn {
+    background: #3194d0;
+    &:hover {
+      background: #187cb7;
+    }
   }
+  
+  &.sign-up-btn {
+    background: #42c02e;
+    &:hover {
+      background: #3db922;
+    }
+  }
+  
 `;
